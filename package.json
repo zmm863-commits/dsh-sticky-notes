@@ -5,10 +5,10 @@
   "type": "module",
   "license": "MIT",
   "author": "paopaocat",
-  "homepage": "https://github.com/paopaocat/dsh-sticky-notes",
+  "homepage": "https://github.com/zmm863-commits/dsh-sticky-notes",
   "repository": {
     "type": "git",
-    "url": "https://github.com/paopaocat/dsh-sticky-notes.git"
+    "url": "https://github.com/zmm863-commits/dsh-sticky-notes.git"
   },
   "main": "lib/index.js",
   "exports": {
