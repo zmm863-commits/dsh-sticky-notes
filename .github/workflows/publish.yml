@@ -1,0 +1,31 @@
+name: Publish to npm
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.23.2'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Upgrade npm (OIDC trusted publishing needs npm >= 11.5.1)
+        run: npm install -g npm@11
+
+      - name: Publish to npm (OIDC trusted publishing)
+        run: |
+          unset NODE_AUTH_TOKEN
+          npm publish --access public
