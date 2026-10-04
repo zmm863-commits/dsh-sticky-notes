@@ -1,7 +1,7 @@
 {
   "name": "dsh-sticky-notes",
   "version": "1.0.2",
-  "description": "Sticky notes plugin for DeepSeek Harness \u2014 quick notes with colored labels, pin, timed reminders, and password protection. / \u6ce1\u6ce1\u732b\u7684\u5373\u65f6\u4fbf\u7b7e \u2014 \u5728 DSH \u968f\u65f6\u8bb0\u5f55\u4e8b\u60c5\uff0c\u652f\u6301\u5f69\u8272\u6807\u7b7e\u3001\u7f6e\u9876\u3001\u5b9a\u65f6\u63d0\u9192\u548c\u5bc6\u7801\u4fdd\u62a4\u3002",
+  "description": "Sticky notes plugin for DeepSeek Harness — quick notes with colored labels, pin, timed reminders, and password protection. / 泡泡猫的即时便签 — 在 DSH 随时记录事情，支持彩色标签、置顶、定时提醒和密码保护。",
   "type": "module",
   "license": "MIT",
   "author": "paopaocat",
@@ -28,9 +28,9 @@
     "sticky-notes",
     "reminder",
     "password",
-    "\u4fbf\u7b7e",
-    "\u63d0\u9192",
-    "\u5bc6\u7801\u4fdd\u62a4"
+    "便签",
+    "提醒",
+    "密码保护"
   ],
   "dsh": {
     "bundle": {
@@ -47,5 +47,44 @@
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
     "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6"
+  },
+  "dshWorkshop": {
+    "schema": "omdsh-workshop-package/v1",
+    "type": "plugin",
+    "integration": {
+      "protocol": "harness-cordis",
+      "artifact": "cordis.patch.yml"
+    },
+    "install": {
+      "mode": "guided",
+      "adapter": "third-party",
+      "failurePolicy": "manual",
+      "touchesCurrentBeforeActivation": false
+    },
+    "lifecycle": {
+      "activation": "immediate",
+      "dispose": "unknown"
+    },
+    "permissions": [
+      "browser:local-storage",
+      "ui:inject"
+    ],
+    "compatibility": {
+      "dshVersions": [
+        "0.2.0-rc.2"
+      ]
+    },
+    "capability": {
+      "id": "sticky-notes-panel",
+      "kind": "ui",
+      "invocation": "打开 DSH Web 界面，进入即时便签面板并新建一条便签",
+      "expected": "便签可创建、置顶与删除，定时提醒与密码保护开关可见并按预期生效"
+    },
+    "evidence": {
+      "install": null,
+      "failureIsolation": null,
+      "hotReload": null,
+      "remove": null
+    }
   }
 }
