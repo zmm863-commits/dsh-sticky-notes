@@ -1,6 +1,6 @@
 {
   "name": "dsh-sticky-notes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Sticky notes plugin for DeepSeek Harness — quick notes with colored labels, pin, timed reminders, and password protection. / 泡泡猫的即时便签 — 在 DSH 随时记录事情，支持彩色标签、置顶、定时提醒和密码保护。",
   "type": "module",
   "license": "MIT",
@@ -46,7 +46,7 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",
-    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6"
+    "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6 || ^0.2.0-rc.1"
   },
   "dshWorkshop": {
     "schema": "omdsh-workshop-package/v1",
